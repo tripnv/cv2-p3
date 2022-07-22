@@ -39,6 +39,11 @@ cv2.createTrackbar('high V','controls',255,255, callback)
 
 input_path = input()
 img=cv2.imread(input_path)
+cv2.namedWindow('mask',cv2.WINDOW_NORMAL)
+cv2.resizeWindow('mask', 1000, 1000)
+
+cv2.namedWindow('res',cv2.WINDOW_NORMAL)
+cv2.resizeWindow('res', 1000, 1000)
 
 while(1):
 	#read source image
