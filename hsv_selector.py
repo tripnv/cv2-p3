@@ -14,7 +14,7 @@ def callback(x):
 	V_high = cv2.getTrackbarPos('high V','controls')
 
 #create a seperate window named 'controls' for trackbar
-cv2.namedWindow('controls',2)
+cv2.namedWindow('controls', 1)
 cv2.resizeWindow("controls", 550,10);
 
 
@@ -39,10 +39,10 @@ cv2.createTrackbar('high V','controls',255,255, callback)
 
 input_path = input()
 img=cv2.imread(input_path)
-cv2.namedWindow('mask',cv2.WINDOW_NORMAL)
+cv2.namedWindow('mask', 2)
 cv2.resizeWindow('mask', 1000, 1000)
 
-cv2.namedWindow('res',cv2.WINDOW_NORMAL)
+cv2.namedWindow('res', 3)
 cv2.resizeWindow('res', 1000, 1000)
 
 while(1):
@@ -68,10 +68,8 @@ while(1):
 	cv2.imshow('mask',mask)
 	cv2.imshow('res',res)
 	
-	#waitfor the user to press escape and break the while loop 
-	k = cv2.waitKey(1) & 0xFF
-	if k == 27:
-		break
+	
+
 print(f"low: \t{hsv_low}")
 print(f"high: \t{hsv_high}")
 #destroys all window
